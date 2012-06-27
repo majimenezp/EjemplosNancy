@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "Views/Layouts/_Layout";
+}
+<a href="/persona/nuevo" class="btn">Nuevo</a>
+<table border="0" cellpadding="0" cellspacing="0" class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nombres
+            </th>
+            <th>
+                Apellidos
+            </th>
+            <th>
+                Fecha de nacimiento
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var fila in Model.registros)
+        {
+            <tr>
+                <td>
+                    @fila.Nombres
+                </td>
+                <td>
+                    @fila.Apellidos
+                </td>
+                <td>
+                    @fila.FechaNacimiento.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <a href="/persona/@fila.Id/editar">Editar</a>|
+                    <a href="/persona/@fila.Id/Eliminar">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

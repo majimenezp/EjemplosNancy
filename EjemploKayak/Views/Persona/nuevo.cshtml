@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "Views/Layouts/_Layout";
+}
+
+@Html.Partial("Views/Persona/_form",Model)
+
+@section scripts{
+    <link href="/content/css/datepicker.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="/content/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $("#FechaNacimiento").datepicker({format:"dd/mm/yyyy"});
+    </script>
+}

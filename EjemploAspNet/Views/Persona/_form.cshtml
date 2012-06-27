@@ -1,0 +1,21 @@
+﻿<form id="forma" name="forma" action="@Model.Action" method="post" enctype="application/x-www-form-urlencoded" class="well">
+<fieldset>
+    @if (((System.Collections.Generic.IDictionary<string, Object>)Model).ContainsKey("Method"))
+    {
+        <input type="hidden" name="_method" value="@Model.Method" />
+    }
+    <input type="hidden" name="Id" value="@Model.Registro.Id" />
+    <label>
+        Nombres</label>
+    <input  type="text" class="span6" name="Nombres" placeholder="Escribe los nombres" value="@Model.Registro.Nombres"/>
+    <label>
+        Apellidos</label>
+    <input  type="text" class="span6" name="Apellidos" placeholder="Escribe los apellidos" value="@Model.Registro.Apellidos"/>
+    <label>
+        Fecha de nacimiento</label>
+    <input type="type" id="FechaNacimiento" name="FechaNacimiento" value="@Model.Registro.FechaNacimiento.ToString("dd/MM/yyyy")" />
+    <div class="form-actions">
+        <button type="submit" class="btn btb-primary">Guardar</button>
+    </div>
+</fieldset>
+</form>
